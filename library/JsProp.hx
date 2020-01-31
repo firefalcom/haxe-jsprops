@@ -59,7 +59,7 @@ class JsProp
 				switch (field.kind)
 				{
 					case FieldType.FProp(_, _, _, _):
-						var t = getDefinePropertyCode(field, true, false);
+						var t = getDefinePropertyCode(field, false, false);
 						if (t != null) codes.push(t);
 					case _:
 				}
