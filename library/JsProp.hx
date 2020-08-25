@@ -83,7 +83,7 @@ class JsProp
 					case [ "get", "set", false ]:
 						ensureNoExpr(e, field.pos);
 						if (fixGetterSetter) field.kind = FieldType.FProp("default", "default", t, e);
-						return macro (untyped Object).defineProperty(
+						return macro (untyped __js__('Object')).defineProperty(
 							(untyped $i{klass.name}).prototype,
 							$v{field.name},
 							{
@@ -96,7 +96,7 @@ class JsProp
 					case [ "get", "never", false ]:
 						ensureNoExpr(e, field.pos);
 						if (fixGetterSetter) field.kind = FieldType.FProp("default", "never", t, e);
-						return macro (untyped Object).defineProperty(
+						return macro (untyped __js__('Object')).defineProperty(
 							(untyped $i{klass.name}).prototype,
 							$v{field.name},
 							{
@@ -106,7 +106,7 @@ class JsProp
 					case [ "never", "set", false ]:
 						ensureNoExpr(e, field.pos);
 						if (fixGetterSetter) field.kind = FieldType.FProp("never", "default", t, e);
-						return macro (untyped Object).defineProperty(
+						return macro (untyped __js__('Object')).defineProperty(
 							(untyped $i{klass.name}).prototype,
 							$v{field.name},
 							{
